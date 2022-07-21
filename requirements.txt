@@ -3,3 +3,14 @@ numpy
 pandas
 seaborn
 matplotlib
+csv
+os
+IPython
+librosa
+librosa.display
+warnings
+sklearn.preprocessing
+sklearn.model_selection
+pydub
+sys
+streamlit.components.v1
