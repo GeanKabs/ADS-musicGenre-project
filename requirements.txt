@@ -7,4 +7,4 @@ IPython
 librosa
 sklearn
 pydub
-
+libsndfile1-dev
