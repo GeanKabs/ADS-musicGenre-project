@@ -38,9 +38,11 @@ import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_title='Genre Classification Dashboard')
 
+
 # Loading the available data and overview
 path = "PinkPanther30.wav"
 st.sidebar.header('Genre Classification')
+st.sidebar.write('''This a Music Genre Classification App, that tries to predict which genre a music belongs to. ''')
 data = st.sidebar.file_uploader("Upload Dataset", type=['wav', 'au', 'mp3'])
 
 # source for this code is at: https://blog.jcharistech.com/2021/01/21/how-to-save-uploaded-files-to-directory-in-streamlit-apps/
