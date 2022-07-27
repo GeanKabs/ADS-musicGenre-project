@@ -61,7 +61,7 @@ else:
     #audio_file = "/home/gk/Projects Exercises/musicGenre/audio_test/PinkPanther30.wav"
     st.audio(path, format='audio/wav')
 
-'''
+
 # Converting uploaded dataset into wav file
 st.subheader('Converting the uploaded audio mp3 dataset into .wav')
 sys.path.append('/path/to/ffmpeg')
@@ -73,7 +73,7 @@ dst = st.text_input("Out: ", )
 #convert mp3 to wav
 sound = AudioSegment.from_mp3(src)
 sound.export(dst, format="wav")
-'''
+
 
     
 # Feature extraction of the Dataset
