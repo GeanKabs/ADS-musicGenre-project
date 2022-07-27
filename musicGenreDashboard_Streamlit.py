@@ -81,7 +81,7 @@ st.header('Feature Extraction of the Dataset')
 # 1. Plotting the Signal
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
-    x, sr = librosa.load("/home/gk/Videos/PinkPanther30.wav")
+    x, sr = librosa.load("PinkPanther30.wav")
     #x, sr = librosa.load(os.path.join("/home/gk/videos/",data.name)) --> does not work for some reason
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
@@ -129,7 +129,7 @@ else:
 
 # Building the Model
 
-df = pd.read_csv('/home/gk/audio.csv')
+df = pd.read_csv('audio.csv')
 
 #preprocessing
 class_list = df.iloc[:,-1]
@@ -213,14 +213,14 @@ header_test = "filename length chroma_stft_mean chroma_stft_var rms_mean rms_var
         
 
 #Creating audio_test csv file
-file = open('/home/gk/audio_test2.csv', 'w', newline = '')
+file = open('audio_test2.csv', 'w', newline = '')
 with file:
     writer = csv.writer(file)
     writer.writerow(header_test)
     
 #Transform each .au file into .csv file
-for filename in os.listdir(f"/home/gk/Projects Exercises/musicGenre/audio_test2/"):
-    genre_name = f"/home/gk/Projects Exercises/musicGenre/audio_test2/{filename}"
+for filename in os.listdir(f"audio_test2/"):
+    genre_name = f"audio_test2/{filename}"
     y, sr = librosa.load(genre_name, mono = True, duration = 30)
     chroma_stft = librosa.feature.chroma_stft(y = y, sr = sr)
     rmse = librosa.feature.rms(y = y)
@@ -234,7 +234,7 @@ for filename in os.listdir(f"/home/gk/Projects Exercises/musicGenre/audio_test2/
     for e in mfcc:
         to_append += f' {np.mean(e)}'
         
-    file = open('/home/gk/audio_test2.csv', 'a', newline = '')
+    file = open('audio_test2.csv', 'a', newline = '')
     
     with file:
         writer = csv.writer(file)
@@ -243,7 +243,7 @@ for filename in os.listdir(f"/home/gk/Projects Exercises/musicGenre/audio_test2/
         
 
 #Predictions
-df_test = pd.read_csv('/home/gk/audio_test2.csv')
+df_test = pd.read_csv('audio_test2.csv')
 X_test = scaler.transform(np.array(df_test.iloc[:, 1:27]))
 
 # generate predictions for samples
