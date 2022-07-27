@@ -177,7 +177,7 @@ def trainModel(model, epochs, optimizer):
     return model.fit(X_train, y_train, validation_data = (X_val, y_val), epochs = epochs, batch_size = batch_size)
 
 #Launching the training, original epochs size was 100
-model_history = trainModel(model = model, epochs = 200, optimizer = 'adam')
+model_history = trainModel(model = model, epochs = 120, optimizer = 'adam')
 
 #Displaying Loss Curves
 st.subheader('Loss')
