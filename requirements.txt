@@ -7,4 +7,5 @@ IPython
 librosa
 sklearn
 pydub
+keras
 
