@@ -69,10 +69,10 @@ st.subheader('Converting the uploaded audio mp3 dataset into .wav')
 sys.path.append('/path/to/ffmpeg')
 #Files
 #st.write('Indicate the full path of audio file, including the .mp3 part')
-st.write('Write in the box: Joeboy-Alcohol.mp3')
+st.write('Type in the box: Joeboy-Alcohol.mp3')
 src = st.text_input("In: ", )
 #st.write('Indicate full path, inclduing name of the audio ending with .wav')
-st.write('Write in the box: audio_test2/Joeboy-Alcohol.wav')
+st.write('Type in the box: audio_test2/Joeboy-Alcohol.wav')
 dst = st.text_input("Out: ", )
 #convert mp3 to wav
 sound = AudioSegment.from_mp3(src)
