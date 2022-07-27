@@ -8,4 +8,5 @@ librosa
 sklearn
 pydub
 keras
+tensorflow
 
