@@ -86,7 +86,7 @@ st.header('Feature Extraction of the Dataset')
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
     x, sr = librosa.load("PinkPanther30.wav")
-    #x, sr = librosa.load(os.path.join("/home/gk/videos/",data.name)) --> does not work for some reason
+    ##x, sr = librosa.load(os.path.join("/home/gk/videos/",data.name)) --> does not work for some reason
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
     st.pyplot(plt)
