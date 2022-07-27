@@ -203,7 +203,7 @@ st.pyplot(plt)
 
 #Displaying accuracy of the model
 st.subheader('Prediction Accuracy')
-test_loss, test_acc = model.evaluate(X_val, y_val, batch_size = 120)
+test_loss, test_acc = model.evaluate(X_val, y_val, batch_size = 128)
 st.write("The test loss is: ", test_loss)
 st.write("The best accuracy is: ", test_acc*100)
 
