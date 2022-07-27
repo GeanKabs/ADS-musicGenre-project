@@ -39,7 +39,7 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_title='Genre Classification Dashboard')
 
 # Loading the available data and overview
-path = "/home/gk/Projects Exercises/musicGenre/audio_test/PinkPanther30.wav"
+path = "PinkPanther30.wav"
 st.sidebar.header('Genre Classification')
 data = st.sidebar.file_uploader("Upload Dataset", type=['wav', 'au', 'mp3'])
 
