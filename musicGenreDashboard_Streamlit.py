@@ -219,8 +219,8 @@ with file:
     writer.writerow(header_test)
     
 #Transform each .au file into .csv file
-for filename in os.listdir(f"audio_test2/"):
-    genre_name = f"audio_test2/{filename}"
+for filename in os.listdir(f"audio_test2"):
+    genre_name = f"audio_test2{filename}"
     y, sr = librosa.load(genre_name, mono = True, duration = 30)
     chroma_stft = librosa.feature.chroma_stft(y = y, sr = sr)
     rmse = librosa.feature.rms(y = y)
