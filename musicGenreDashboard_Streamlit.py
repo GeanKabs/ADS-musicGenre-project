@@ -226,7 +226,7 @@ with file:
 for filename in os.listdir(f"audio_test2"):
     #genre_name = f"audio_test2/{filename}"
     genre_name = f"audio_test2/Joeboy-Alcohol.wav"
-    y, sr = librosa.load(genre_name, mono = True, duration = 30)
+    y, sr = librosa.load(genre_name, mono = True, duration = 90)
     chroma_stft = librosa.feature.chroma_stft(y = y, sr = sr)
     rmse = librosa.feature.rms(y = y)
     spec_cent = librosa.feature.spectral_centroid(y = y, sr = sr)
