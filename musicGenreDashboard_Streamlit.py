@@ -66,7 +66,7 @@ else:
 #saving uploaded audio file
 if data is not None:
     
-    with open(os.path.join("/test2",data.name),"wb") as f:
+    with open(os.path.join("test2",data.name),"wb") as f:
 			  	f.write((data).getbuffer())
 else:
 	path
