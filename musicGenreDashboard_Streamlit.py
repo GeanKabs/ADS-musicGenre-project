@@ -46,13 +46,7 @@ st.sidebar.write('''This a Music Genre Classification App, that tries to predict
 data = st.sidebar.file_uploader("Upload Dataset", type=['wav', 'au', 'mp3'])
 
 # source for this code is at: https://blog.jcharistech.com/2021/01/21/how-to-save-uploaded-files-to-directory-in-streamlit-apps/
-#saving uploaded audio file
-if data is not None:
-    
-    with open(os.path.join("/test2/",data.name),"wb") as f:
-			  	f.write((data).getbuffer())
-else:
-	path
+
 
 
 #Check for uploaded dataset
@@ -63,9 +57,19 @@ if data is not None:
     
 # Default Dataset if none is uploaded
 else:
-    st.header('Play default Dataset (*since none is uploaded*)')
-    st.audio(path, format='audio/wav')
+    mssg = st.write(" This is an app for music genre classification. No music file has been uploaded. **Please upload a file to continue**.")
+    exit(mssg)
+    #st.header('Play default Dataset (*since none is uploaded*)')
+    #st.audio(path, format='audio/wav')
 
+	
+#saving uploaded audio file
+if data is not None:
+    
+    with open(os.path.join("/test2/",data.name),"wb") as f:
+			  	f.write((data).getbuffer())
+else:
+	path
 
 
 
