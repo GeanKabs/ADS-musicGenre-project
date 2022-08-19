@@ -51,6 +51,8 @@ if data is not None:
     
     with open(os.path.join("/test2/",data.name),"wb") as f:
 			  	f.write((data).getbuffer())
+else:
+	path
 
 
 #Check for uploaded dataset
@@ -62,33 +64,19 @@ if data is not None:
 # Default Dataset if none is uploaded
 else:
     st.header('Play default Dataset (*since none is uploaded*)')
-    #audio_file = "/home/gk/Projects Exercises/musicGenre/audio_test/PinkPanther30.wav"
     st.audio(path, format='audio/wav')
 
-'''
-# Converting uploaded dataset into wav file
-st.subheader('Converting the uploaded audio mp3 dataset into .wav')
-sys.path.append('/path/to/ffmpeg')
-#Files
-#st.write('Indicate the full path of audio file, including the .mp3 part')
-st.write('Type in the box: Joeboy-Alcohol.mp3')
-src = st.text_input("In: ", )
-#st.write('Indicate full path, inclduing name of the audio ending with .wav')
-st.write('Type in the box: audio_test2/Joeboy-Alcohol.wav')
-dst = st.text_input("Out: ", )
-#convert mp3 to wav
-sound = AudioSegment.from_mp3(src)
-sound.export(dst, format="wav")
-'''
-src = (os.path.join("/test2/",data.name))
+
+
+
     
 # Feature extraction of the Dataset
 st.header('Feature Extraction of the Dataset')
 # 1. Plotting the Signal
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
+    src = (os.path.join("/test2/",data.name))
     x, sr = librosa.load("src")
-    ##x, sr = librosa.load(os.path.join("/home/gk/videos/",data.name)) --> does not work for some reason
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
     st.pyplot(plt)
