@@ -49,7 +49,7 @@ data = st.sidebar.file_uploader("Upload Dataset", type=['wav', 'au', 'mp3'])
 #saving uploaded audio file
 if data is not None:
     
-    with open(os.path.join("test2/",data.name),"wb") as f:
+    with open(os.path.join("/test2/",data.name),"wb") as f:
 			  	f.write((data).getbuffer())
 
 
@@ -80,7 +80,7 @@ dst = st.text_input("Out: ", )
 sound = AudioSegment.from_mp3(src)
 sound.export(dst, format="wav")
 '''
-src = (os.path.join("test2/",data.name))
+src = (os.path.join("/test2/",data.name))
     
 # Feature extraction of the Dataset
 st.header('Feature Extraction of the Dataset')
