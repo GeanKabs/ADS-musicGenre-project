@@ -79,7 +79,7 @@ st.header('Feature Extraction of the Dataset')
 # 1. Plotting the Signal
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
-    src = (os.path.join("/test2",data.name))
+    src = (os.path.join("test2",data.name))
     x, sr = librosa.load("src")
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
@@ -242,7 +242,7 @@ for filename in os.listdir(f"test2"):
         
 
 #Predictions
-df_test = pd.read_csv('audio_test2.csv')
+df_test = pd.read_csv('test2.csv')
 X_test = scaler.transform(np.array(df_test.iloc[:, 1:27]))
 
 # generate predictions for samples
