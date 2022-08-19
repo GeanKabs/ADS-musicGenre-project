@@ -85,7 +85,7 @@ st.header('Feature Extraction of the Dataset')
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
     src = (os.path.join("test2/",data.name))
-    x, sr = librosa.load("src")
+    x, sr = librosa.load(src)
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
     st.pyplot(plt)
