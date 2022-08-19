@@ -34,7 +34,7 @@ import sys
 # librosa .load dependacies
 import librosa
 from pathlib import Path
-import ffmpeg
+#import ffmpeg
 
 import streamlit as st
 import pandas as pd
