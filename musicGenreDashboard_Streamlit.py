@@ -46,9 +46,11 @@ st.sidebar.write('''This a Music Genre Classification App, that tries to predict
 data = st.sidebar.file_uploader("Upload Dataset", type=['wav', 'au', 'mp3'])
 
 # source for this code is at: https://blog.jcharistech.com/2021/01/21/how-to-save-uploaded-files-to-directory-in-streamlit-apps/
-#with open(os.path.join("/home/gk/Videos/", data.name),"wb") as f:
-#    f.write(data.getbuffer())
-#st.success("Saved File")
+#saving uploaded audio file
+if data is not None:
+    
+    with open(os.path.join("test2/",data.name),"wb") as f:
+			  	f.write((data).getbuffer())
 
 
 #Check for uploaded dataset
@@ -63,7 +65,7 @@ else:
     #audio_file = "/home/gk/Projects Exercises/musicGenre/audio_test/PinkPanther30.wav"
     st.audio(path, format='audio/wav')
 
-
+'''
 # Converting uploaded dataset into wav file
 st.subheader('Converting the uploaded audio mp3 dataset into .wav')
 sys.path.append('/path/to/ffmpeg')
@@ -77,15 +79,15 @@ dst = st.text_input("Out: ", )
 #convert mp3 to wav
 sound = AudioSegment.from_mp3(src)
 sound.export(dst, format="wav")
-
-
+'''
+src = (os.path.join("test2/",data.name))
     
 # Feature extraction of the Dataset
 st.header('Feature Extraction of the Dataset')
 # 1. Plotting the Signal
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
-    x, sr = librosa.load("PinkPanther30.wav")
+    x, sr = librosa.load("src")
     ##x, sr = librosa.load(os.path.join("/home/gk/videos/",data.name)) --> does not work for some reason
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
@@ -121,7 +123,7 @@ else:
 #MFCC
 if data is not None:
     st.subheader('MFCC of Uploaded Dataset')
-    x, fs = librosa.load(path)
+    x, fs = librosa.load(src)
     librosa.display.waveshow(x, sr=sr)
     st.pyplot(plt)
     
@@ -217,15 +219,15 @@ header_test = "filename length chroma_stft_mean chroma_stft_var rms_mean rms_var
         
 
 #Creating audio_test csv file
-file = open('audio_test2.csv', 'w', newline = '')
+file = open('test2.csv', 'w', newline = '')
 with file:
     writer = csv.writer(file)
     writer.writerow(header_test)
     
 #Transform each .au file into .csv file
-for filename in os.listdir(f"audio_test2"):
-    #genre_name = f"audio_test2/{filename}"
-    genre_name = f"audio_test2/Joeboy-Alcohol.wav"
+for filename in os.listdir(f"test2"):
+    genre_name = f"test2/{filename}"
+    #genre_name = f"audio_test2/Joeboy-Alcohol.wav"
     y, sr = librosa.load(genre_name, mono = True, duration = 90)
     chroma_stft = librosa.feature.chroma_stft(y = y, sr = sr)
     rmse = librosa.feature.rms(y = y)
@@ -239,7 +241,7 @@ for filename in os.listdir(f"audio_test2"):
     for e in mfcc:
         to_append += f' {np.mean(e)}'
         
-    file = open('audio_test2.csv', 'a', newline = '')
+    file = open('test2.csv', 'a', newline = '')
     
     with file:
         writer = csv.writer(file)
