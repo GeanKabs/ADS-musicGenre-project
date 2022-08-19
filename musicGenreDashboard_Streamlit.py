@@ -66,7 +66,7 @@ else:
 #saving uploaded audio file
 if data is not None:
     
-    with open(os.path.join("/test2/",data.name),"wb") as f:
+    with open(os.path.join("/test2",data.name),"wb") as f:
 			  	f.write((data).getbuffer())
 else:
 	path
@@ -79,7 +79,7 @@ st.header('Feature Extraction of the Dataset')
 # 1. Plotting the Signal
 if data is not None:
     st.subheader('Plotting the Signal of Uploaded Dataset')
-    src = (os.path.join("/test2/",data.name))
+    src = (os.path.join("/test2",data.name))
     x, sr = librosa.load("src")
     plt.figure(figsize=(14, 5))
     librosa.display.waveshow(x, sr=sr)
