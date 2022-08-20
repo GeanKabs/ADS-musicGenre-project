@@ -64,10 +64,11 @@ if data is not None:
     
 # Default Dataset if none is uploaded
 else:
-    mssg = st.write(" This is an app for music genre classification. No music file has been uploaded. **Please upload a file to continue**.")
-    exit(mssg)
-    #st.header('Play default Dataset (*since none is uploaded*)')
-    #st.audio(path, format='audio/wav')
+    #mssg = st.write(" This is an app for music genre classification. No music file has been uploaded. **Please upload a file to continue**.")
+    #exit(mssg)
+    st.header('Play default Dataset (*since none is uploaded*)')
+    st.audio(path, format='audio/wav')
+    st.write(" This is an app for music genre classification. No music file has been uploaded. **Please upload a file to continue**.")
 
 	
 #saving uploaded audio file
