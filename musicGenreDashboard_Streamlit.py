@@ -266,14 +266,20 @@ st.write('The music genre of the audio dataset you have uploaded is likely to be
 
 
 # Loading Files
-audio_segment = AudioSegment.from_file(src)
+if data is not None:
+	audio_segment = AudioSegment.from_file(src)
+	
+	#Printing the Audio Attirbutes
+	st.header('Audio Parameters of the music file Uploaded')
+	st.write(f"Channels: {audio_segment.channels}")
+	st.write(f"Sample width: {audio_segment.sample_width}")
+	st.write(f"Frame rate(sample rate): {audio_segment.frame_rate}")
+	st.write(f"Frame width: {audio_segment.frame_width}")
+	st.write(f"Length (ms): {len(audio_segment)}")
+	st.write(f"Frame count: {audio_segment.frame_count()}")
+	st.write(f"Intensity: {audio_segment.dBFS}")
+else:
+	st.write(''' This is the default data set values. Please upload a music file, for the program to generate its value for you.''')
 
-#Printing the Audio Attirbutes
-st.header('Audio Parameters of the music file Uploaded')
-st.write(f"Channels: {audio_segment.channels}")
-st.write(f"Sample width: {audio_segment.sample_width}")
-st.write(f"Frame rate(sample rate): {audio_segment.frame_rate}")
-st.write(f"Frame width: {audio_segment.frame_width}")
-st.write(f"Length (ms): {len(audio_segment)}")
-st.write(f"Frame count: {audio_segment.frame_count()}")
-st.write(f"Intensity: {audio_segment.dBFS}")
+	
+
