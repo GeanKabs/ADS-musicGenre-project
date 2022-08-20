@@ -77,7 +77,7 @@ if data is not None:
     with open(os.path.join("test2",data.name),"wb") as f:
 			  	f.write((data).getbuffer())
 else:
-	path
+	st.write('*No music file has been uploaded. Default dataset running*')
 
 
 
@@ -279,7 +279,7 @@ if data is not None:
 	st.write(f"Frame count: {audio_segment.frame_count()}")
 	st.write(f"Intensity: {audio_segment.dBFS}")
 else:
-	st.write(''' This is the default data set values. Please upload a music file, for the program to generate its value for you.''')
+	st.write(''' This is the default data set values. *Please upload a music file*, for the program to generate its value for you.''')
 
 	
 
