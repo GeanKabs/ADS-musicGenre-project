@@ -250,7 +250,7 @@ for filename in os.listdir(f"test2"):
         
 
 #Predictions
-df_test = pd.read_csv('test2.csv')
+df_test = pd.read_csv('audio_test.csv')
 X_test = scaler.transform(np.array(df_test.iloc[:, 1:27]))
 
 # generate predictions for samples
